@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <meta name="description" content="Wedding invitation of Amr & Mayada" />
+    <title>Amr & Mayada - Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- PAGE 1 · LOADING SCREEN -->
+    <section id="page-loading" class="page active">
+      <div class="loading-bg"></div>
+      <div class="particles" id="particles"></div>
+      <div class="loading-content">
+        <div class="crest-wrapper">
+          <div class="crest-glow"></div>
+          <img id="crest-img" class="crest-img" alt="Royal Crest" />
+        </div>
+        <div class="loading-bar-wrap">
+          <div class="loading-bar" id="loading-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2 · DOOR SCENE -->
+    <section id="page-door" class="page">
+      <div class="door-static-bg"></div>
+      <div class="door-bg-wrap">
+        <video
+          id="door-gif"
+          class="door-gif"
+          autoplay
+          muted
+          playsinline
+        ></video>
+        <div class="door-overlay" id="door-overlay"></div>
+        <div class="door-glow-ring" id="door-glow-ring"></div>
+      </div>
+      <div class="door-top-text">
+        <p class="door-pre en-text">Together with their families</p>
+        <p class="door-pre ar-text">بمشاركة عائلتيهما</p>
+        <p class="door-names-hero">
+          <span class="groom-name-en"></span>
+          <span class="amp-hero">&amp;</span>
+          <span class="bride-name-en"></span>
+        </p>
+        <p
+          class="door-names-hero ar-text"
+          style="font-family: &quot;Amiri&quot;, serif"
+        >
+          <span class="groom-name-ar"></span>
+          <span class="amp-hero">&amp;</span>
+          <span class="bride-name-ar"></span>
+        </p>
+        <p class="door-subtitle en-text">
+          invite you to open the door to their celebration
+        </p>
+        <p class="door-subtitle ar-text">يدعوانكم لفتح باب الاحتفال</p>
+      </div>
+      <button id="knock-btn" class="knock-btn" aria-label="Knock">
+        <span class="knock-emoji">🚪</span>
+        <span class="knock-label en-text">Knock</span>
+        <span class="knock-label ar-text">إطرق</span>
+      </button>
+      <div class="lang-toggle-wrap door-lang">
+        <button id="lang-btn-door" class="lang-btn">العربية / EN</button>
+      </div>
+    </section>
+
+    <!-- PAGE 3 · WEDDING DETAILS + COUNTDOWN + PHOTOS -->
+    <section id="page-details" class="page">
+      <div class="details-bg"></div>
+      <div class="petals-wrap" id="petals"></div>
+
+      <div class="lang-toggle-wrap details-lang">
+        <button id="lang-btn-details" class="lang-btn">العربية / EN</button>
+      </div>
+
+      <!-- Hero Invitation Text -->
+      <div class="details-hero fade-element">
+        <div class="hero-crest-mini">
+          <img id="hero-crest-img" alt="Crest" />
+        </div>
+        <p class="invite-pre en-text">
+          <br /><br /><br />Together with their families
+        </p>
+        <p class="invite-pre ar-text">بمشاركة عائلتيهما</p>
+        <div class="hero-names">
+          <span class="name-left en-text groom-name-en"></span>
+          <span class="name-left ar-text groom-name-ar"></span>
+          <span class="ampersand">&amp;</span>
+          <span class="name-right en-text bride-name-en"></span>
+          <span class="name-right ar-text bride-name-ar"></span>
+        </div>
+        <p class="invite-body en-text">
+          invite you to the celebration of their wedding
+        </p>
+        <p class="invite-body ar-text">يدعوانكم للاحتفال بزفافهما</p>
+        <div class="ornament-line">
+          <span></span>
+          <div class="diamond-sm">◆</div>
+          <span></span>
+        </div>
+        <p class="hero-event en-text">Wedding Ceremony</p>
+        <p class="hero-event ar-text">حفل الزفاف</p>
+      </div>
+
+      <!-- Event Detail Cards -->
+      <div class="details-cards">
+        <div class="detail-card fade-element" style="--delay: 0.1s">
+          <div class="card-icon">📅</div>
+          <div class="card-label en-text">Date</div>
+          <div class="card-label ar-text">التاريخ</div>
+          <div class="card-value en-text wedding-date-en"></div>
+          <div class="card-value ar-text wedding-date-ar"></div>
+        </div>
+        <div class="detail-card fade-element" style="--delay: 0.2s">
+          <div class="card-icon">🕖</div>
+          <div class="card-label en-text">Time</div>
+          <div class="card-label ar-text">الوقت</div>
+          <div class="card-value wedding-time"></div>
+        </div>
+        <div class="detail-card fade-element" style="--delay: 0.3s">
+          <div class="card-icon">🏛️</div>
+          <div class="card-label en-text">Venue</div>
+          <div class="card-label ar-text">المكان</div>
+          <div class="card-value en-text wedding-location-en"></div>
+          <div class="card-value ar-text wedding-location-ar"></div>
+          <br /><br />
+          <a href="#" target="_blank" class="map-btn wedding-map-btn en-text"
+            >🗺 View Location</a
+          >
+          <a href="#" target="_blank" class="map-btn wedding-map-btn ar-text"
+            >🗺 عرض الموقع</a
+          >
+        </div>
+      </div>
+
+      <!-- COUNTDOWN TIMER -->
+      <div class="countdown-wrap fade-element">
+        <div class="countdown-title">
+          <span class="en-text">COUNTDOWN TO THE BIG DAY</span>
+          <span class="ar-text">العد التنازلي ليوم الزفاف</span>
+        </div>
+        <div class="countdown-container" id="countdown-container">
+          <div class="countdown-card">
+            <div class="countdown-number" id="countdown-days">00</div>
+            <div class="countdown-label en-text">DAYS</div>
+            <div class="countdown-label ar-text">أيام</div>
+          </div>
+          <div class="countdown-card">
+            <div class="countdown-number" id="countdown-hours">00</div>
+            <div class="countdown-label en-text">HOURS</div>
+            <div class="countdown-label ar-text">ساعات</div>
+          </div>
+          <div class="countdown-card">
+            <div class="countdown-number" id="countdown-minutes">00</div>
+            <div class="countdown-label en-text">MINUTES</div>
+            <div class="countdown-label ar-text">دقائق</div>
+          </div>
+          <div class="countdown-card">
+            <div class="countdown-number" id="countdown-seconds">00</div>
+            <div class="countdown-label en-text">SECONDS</div>
+            <div class="countdown-label ar-text">ثواني</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COUPLE PHOTOS SECTION - Vertical Layout -->
+      <div class="couple-photos-wrap fade-element">
+        <div class="photos-title">
+          <span class="en-text">OUR PRECIOUS MOMENTS</span>
+          <span class="ar-text">لحظاتنا الثمينة</span>
+        </div>
+        <div class="photos-vertical" id="photos-grid">
+          <!-- Photo 1 -->
+          <div class="photo-card-vertical">
+            <div class="photo-border-vertical">
+              <div class="photo-inner-vertical">
+                <img
+                  id="couple-photo-1"
+                  class="couple-photo-vertical"
+                  alt="Couple Moment 1"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div
+              class="photo-caption-vertical en-text"
+              id="photo-caption-1-en"
+            ></div>
+            <div
+              class="photo-caption-vertical ar-text"
+              id="photo-caption-1-ar"
+            ></div>
+          </div>
+          <!-- Photo 2 -->
+          <div class="photo-card-vertical">
+            <div class="photo-border-vertical">
+              <div class="photo-inner-vertical">
+                <img
+                  id="couple-photo-2"
+                  class="couple-photo-vertical"
+                  alt="Couple Moment 2"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div
+              class="photo-caption-vertical en-text"
+              id="photo-caption-2-en"
+            ></div>
+            <div
+              class="photo-caption-vertical ar-text"
+              id="photo-caption-2-ar"
+            ></div>
+          </div>
+          <!-- Photo 3 -->
+          <div class="photo-card-vertical">
+            <div class="photo-border-vertical">
+              <div class="photo-inner-vertical">
+                <img
+                  id="couple-photo-3"
+                  class="couple-photo-vertical"
+                  alt="Couple Moment 3"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div
+              class="photo-caption-vertical en-text"
+              id="photo-caption-3-en"
+            ></div>
+            <div
+              class="photo-caption-vertical ar-text"
+              id="photo-caption-3-ar"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW FOOTER WITH SOCIAL MEDIA & CONTACT -->
+      <footer class="wedding-footer fade-element">
+        <div class="ornament-line">
+          <span></span>
+          <div class="diamond-sm">◆</div>
+          <span></span>
+        </div>
+
+        <!-- Social Media Icons Row -->
+        <div class="social-icons-container">
+          <!-- WhatsApp -->
+          <a href="#" id="social-whatsapp" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.032 2.016c-5.52 0-9.984 4.464-9.984 9.984 0 1.776.48 3.456 1.296 4.944L2.016 22.08l5.28-1.392c1.44.816 3.072 1.248 4.752 1.248 5.52 0 9.984-4.464 9.984-9.984s-4.464-9.984-9.984-9.984zm0 18.432c-1.632 0-3.216-.432-4.608-1.248l-.336-.192-3.168.816.864-3.072-.192-.336c-.864-1.44-1.344-3.072-1.344-4.752 0-4.704 3.84-8.544 8.544-8.544s8.544 3.84 8.544 8.544-3.84 8.544-8.544 8.544zm4.656-6.432c-.24-.12-1.44-.72-1.68-.816-.24-.096-.432-.144-.624.144-.192.24-.72.816-.864.96-.144.144-.288.168-.528.048-.24-.12-1.008-.384-1.92-1.2-.72-.624-1.2-1.392-1.344-1.632-.144-.24-.048-.36.096-.48.144-.144.288-.336.432-.48.144-.144.192-.24.288-.408.096-.168.048-.312-.024-.432-.072-.12-.624-1.512-.864-2.064-.24-.552-.48-.48-.624-.48-.144 0-.288-.024-.432-.024-.144 0-.384.048-.576.24-.192.192-.72.72-.72 1.776 0 1.056.768 2.064.864 2.208.096.144 1.488 2.304 3.6 3.168.504.216.888.336 1.2.432.504.144.96.12 1.32.072.408-.048 1.248-.504 1.44-1.008.192-.504.192-.912.144-1.008-.048-.096-.144-.144-.288-.24z"/>
+            </svg>
+          </a>
+
+          <!-- Phone -->
+          <a href="#" id="social-phone" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </a>
+
+          <!-- TikTok -->
+          <a href="#" id="social-tiktok" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69c-1.39-.88-2.38-2.26-2.63-3.88-.03-.18-.04-.36-.04-.55h-3.27c0 .02.01.05.01.08v13.44c0 1.71-1.39 3.11-3.11 3.11-1.34 0-2.49-.85-2.91-2.04-.27-.76-.18-1.59.24-2.27.53-.85 1.48-1.4 2.55-1.4.27 0 .54.04.79.11v-3.32c-.26-.04-.52-.07-.79-.07-3.27 0-5.93 2.66-5.93 5.93 0 2.27 1.28 4.23 3.15 5.22.97.51 2.08.78 3.22.78 3.27 0 5.93-2.66 5.93-5.93V8.2c.6.44 1.3.76 2.05.93v-3.2c-.25-.04-.5-.09-.74-.16z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="#" id="social-instagram" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.332.014 7.052.072 5.197.157 3.355.54 2.118 1.777.84 3.055.457 4.897.373 6.752.315 8.032.3 8.441.3 12c0 3.559.015 3.968.072 5.248.085 1.855.468 3.697 1.745 4.975 1.277 1.277 3.12 1.66 4.975 1.745 1.28.057 1.689.072 5.248.072 3.559 0 3.968-.015 5.248-.072 1.855-.085 3.697-.468 4.975-1.745 1.277-1.277 1.66-3.12 1.745-4.975.057-1.28.072-1.689.072-5.248 0-3.559-.015-3.968-.072-5.248-.085-1.855-.468-3.697-1.745-4.975-1.277-1.277-3.12-1.66-4.975-1.745C15.968.014 15.559 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162S15.403 5.838 12 5.838zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="#" id="social-facebook" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Contact Phone Number Text -->
+        <div class="footer-contact-row">
+          <span class="footer-phone-label en-text">📞 Contact:</span>
+          <span class="footer-phone-label ar-text">📞 اتصل بنا:</span>
+          <a href="#" id="footer-phone-number" class="footer-phone-link">+1234567890</a>
+        </div>
+
+        <!-- Simple Signature -->
+        <div class="footer-signature">
+          <p class="signature-text en-text">Designed with love by Loventa</p>
+          <p class="signature-text ar-text">صُمم بحب بواسطة لوفينتا</p>
+        </div>
+      </footer>
+    </section>
+
+    <audio id="bg-music" loop preload="none"></audio>
+    <script src="script.js" defer></script>
+  </body>
+</html>
