@@ -16,26 +16,36 @@ const CONFIG = {
   // Wedding Details
   weddingDate: "June 6, 2026",
   weddingDateAr: "٦ يونيو ٢٠٢٦",
-  weddingTime: "7:00 PM",
+  weddingTime: "8:00 PM",
   weddingLocation: "At Home",
   weddingLocationAr: "أمام المنزل",
   weddingMapLink:
     "https://www.google.com/maps?q=30.725908279418945,31.246858596801758&z=17&hl=en",
 
-  // ========== SOCIAL MEDIA LINKS (UPDATE THESE WITH YOUR ACTUAL LINKS) ==========
-  socialLinks: {
-    whatsapp: "https://wa.me/201505646406", // واتساب - replace with your WhatsApp number (e.g., https://wa.me/201234567890)
-    phone: "tel:+201505646406", // رقم التليفون - replace with your phone number
-    tiktok: "https://www.tiktok.com/@loventa68", // تيك توك - replace with your TikTok username link
-    instagram: "https://www.instagram.com/love__nta/", // انستجرام - replace with your Instagram profile
-    facebook:
-      "https://www.facebook.com/profile.php?id=61565289157594&mibextid=wwXIfr&rdid=LvOEQfQIXRkCukV0&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Ck7EUrzmW%2F%3Fmibextid%3DwwXIfr#/", // فيس بوك - replace with your Facebook profile
+  // ========== COUNTDOWN DATE & TIME PARAMETERS ==========
+  // غيّر هنا التاريخ والوقت اللي تريده للعد التنازلي
+  countdownDate: {
+    year: 2026, // السنة
+    month: 5, // الشهر (0=يناير, 1=فبراير, 2=مارس, 3=ابريل, 4=مايو, 5=يونيو, 6=يوليو, 7=اغسطس, 8=سبتمبر, 9=اكتوبر, 10=نوفمبر, 11=ديسمبر)
+    day: 6, // اليوم
+    hour: 20, // الساعة (24-hour format: 0-23)
+    minute: 0, // الدقيقة (0-59)
+    second: 0, // الثانية (0-59)
   },
 
-  // Phone number to display in footer (text)
-  displayPhoneNumber: "+201505646406", // الرقم الذي سيظهر في الفوتر - replace with your phone number
+  // ========== SOCIAL MEDIA LINKS (UPDATE THESE WITH YOUR ACTUAL LINKS) ==========
+  socialLinks: {
+    whatsapp: "https://wa.me/201505646406",
+    phone: "tel:+201505646406",
+    tiktok: "https://www.tiktok.com/@loventa68",
+    instagram: "https://www.instagram.com/love__nta/",
+    facebook:
+      "https://www.facebook.com/profile.php?id=61565289157594&mibextid=wwXIfr&rdid=LvOEQfQIXRkCukV0&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Ck7EUrzmW%2F%3Fmibextid%3DwwXIfr#",
+  },
 
-  // Asset Paths (UPDATE THESE PATHS TO MATCH YOUR FILES)
+  displayPhoneNumber: "+201505646406",
+
+  // Asset Paths
   crestImage:
     "assets/images/Gemini_Generated_Image_aai6peaai6peaai6-removebg-preview.webp",
   doorStaticBg: "assets/images/demo3.webp",
@@ -43,7 +53,7 @@ const CONFIG = {
   detailsBg: "assets/images/image2.webp",
   musicUrl: "assets/music/music1.mp3",
 
-  // Couple Photos (UPDATE THESE PATHS AND CAPTIONS)
+  // Couple Photos
   couplePhotos: [
     {
       src: "assets/images/couple-1.webp",
@@ -191,37 +201,31 @@ function injectCouplePhotos() {
 
 /* ========================= SOCIAL MEDIA LINKS INJECTION ========================= */
 function injectSocialLinks() {
-  // WhatsApp
   const whatsappLink = document.getElementById("social-whatsapp");
   if (whatsappLink && CONFIG.socialLinks.whatsapp) {
     whatsappLink.href = CONFIG.socialLinks.whatsapp;
   }
 
-  // Phone
   const phoneLink = document.getElementById("social-phone");
   if (phoneLink && CONFIG.socialLinks.phone) {
     phoneLink.href = CONFIG.socialLinks.phone;
   }
 
-  // TikTok
   const tiktokLink = document.getElementById("social-tiktok");
   if (tiktokLink && CONFIG.socialLinks.tiktok) {
     tiktokLink.href = CONFIG.socialLinks.tiktok;
   }
 
-  // Instagram
   const instagramLink = document.getElementById("social-instagram");
   if (instagramLink && CONFIG.socialLinks.instagram) {
     instagramLink.href = CONFIG.socialLinks.instagram;
   }
 
-  // Facebook
   const facebookLink = document.getElementById("social-facebook");
   if (facebookLink && CONFIG.socialLinks.facebook) {
     facebookLink.href = CONFIG.socialLinks.facebook;
   }
 
-  // Footer phone number text and link
   const footerPhoneLink = document.getElementById("footer-phone-number");
   if (footerPhoneLink) {
     footerPhoneLink.textContent = CONFIG.displayPhoneNumber;
@@ -233,7 +237,17 @@ function injectSocialLinks() {
 
 /* ========================= COUNTDOWN TIMER ========================= */
 function startCountdown() {
-  const weddingDateTime = new Date(2026, 5, 28, 19, 0, 0);
+  // ✅ التاريخ والوقت بياخدوا من البارامترز اللي انت هتكتبها في CONFIG
+  const weddingDateTime = new Date(
+    CONFIG.countdownDate.year,
+    CONFIG.countdownDate.month,
+    CONFIG.countdownDate.day,
+    CONFIG.countdownDate.hour,
+    CONFIG.countdownDate.minute,
+    CONFIG.countdownDate.second,
+  );
+
+  console.log("Countdown target date:", weddingDateTime); // للتأكد من التاريخ
 
   function updateCountdown() {
     const now = new Date();
@@ -322,30 +336,25 @@ function playDoor() {
   if (doorPlayed) return;
   doorPlayed = true;
 
-  // Play video (muted)
   doorGif.src = CONFIG.doorGif;
   doorGif.load();
   doorGif.currentTime = 0;
   doorGif.muted = true;
   doorGif.play().catch((e) => console.warn("Video play error:", e));
 
-  // Fade in background music
   if (bgMusic && CONFIG.musicUrl) {
     bgMusic.currentTime = 0;
     fadeInMusic(0.65, 1500);
   }
 
-  // Show door effects
   document.querySelector(".door-bg-wrap").classList.add("revealed");
   doorOverlay.style.opacity = "0";
   doorGlowRing.classList.add("active");
 
-  // Hide knock button
   knockBtn.style.opacity = "0";
   knockBtn.style.pointerEvents = "none";
   knockBtn.style.transform = "scale(0.8)";
 
-  // Transition to details page when video ends
   let transitionDone = false;
   const goToDetails = () => {
     if (transitionDone) return;
@@ -358,7 +367,7 @@ function playDoor() {
   };
 
   doorGif.addEventListener("ended", goToDetails, { once: true });
-  setTimeout(goToDetails, 15000); // Fallback
+  setTimeout(goToDetails, 15000);
 }
 
 /* ========================= FADE IN ELEMENTS ON PAGE 3 ========================= */
@@ -507,7 +516,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initAudio();
   injectContent();
   injectCouplePhotos();
-  injectSocialLinks(); // Inject social media links
+  injectSocialLinks();
   bindEvents();
   enableAudioOnUserInteraction();
 
